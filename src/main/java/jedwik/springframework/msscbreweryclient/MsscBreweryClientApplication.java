@@ -1,4 +1,4 @@
-package guru.springframework.msscbreweryclient;
+package jedwik.springframework.msscbreweryclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
