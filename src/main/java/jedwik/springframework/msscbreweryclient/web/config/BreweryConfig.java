@@ -1,4 +1,4 @@
-package jedwik.springframework.msscbreweryclient.web.client;
+package jedwik.springframework.msscbreweryclient.web.config;
 
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

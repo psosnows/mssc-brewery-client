@@ -1,5 +1,6 @@
 package jedwik.springframework.msscbreweryclient.web.client;
 
+import jedwik.springframework.msscbreweryclient.web.config.BreweryConfig;
 import jedwik.springframework.msscbreweryclient.web.model.BeerDto;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
@@ -26,5 +27,9 @@ public class BreweryClient {
 
     public URI saveNewBeer(BeerDto beerDto) {
         return restTemplate.postForLocation(config.getApihost() + config.BEER_PATH_V1, beerDto);
+    }
+
+    public void updateBeer(UUID uuid, BeerDto beerDto) {
+        restTemplate.put(config.getApihost() + config.BEER_PATH_V1 + uuid.toString(), beerDto);
     }
 }

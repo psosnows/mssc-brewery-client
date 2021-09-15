@@ -10,6 +10,8 @@ import java.net.URI;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.then;
 
 @SpringBootTest
 class BreweryClientTest {
@@ -30,5 +32,12 @@ class BreweryClientTest {
         URI uri = client.saveNewBeer(dto);
         assertNotNull(uri);
         System.out.println(uri);
+    }
+
+    @Test
+    void updateBeer() {
+        BeerDto dto = BeerDto.builder().beerName("Super Scout").build();
+        UUID uuid = UUID.randomUUID();
+        client.updateBeer(uuid, dto);
     }
 }
